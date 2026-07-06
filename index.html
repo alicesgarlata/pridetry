@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+    <html lang="it">
+        <head>
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
+            <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+            <title>Project Presentation</title>
+            <link rel="stylesheet" href="style.css">
+        </head>
+    
+        <body>
+            <header class="hero"></header>
+
+
+            <div class="title-section">
+                 <h1>Fighting for Pride</h1>
+                  <p>A hybrid exhibition on Italian Pride</p>
+            </div>
+
+
+            <nav>
+                <a href="#sez1">Project Introduction</a>
+                <a href="#sez2">Benchmark</a>
+                <a href="#sez3">Design and Components</a>
+                <a href="#sez4">User Flow and Experience</a>
+                <a href="#team">The Team</a>
+            </nav>
+
+
+            <main>
+                <section id="sez1" class="box">
+                    <h2>Project Introduction</h2>
+                    <p><em>Fighting for Pride</em> is a hybrid phygital exhibition taking place at Cassero LGBTQIA+ Center, developed in collaboration with the Documentation Centre “Flavia Madaschi”, one of the largest LGBTQIA+ community archives in Europe. The main objective of the exhibition is to inform the visitor about the most important steps of Italian LGBTQIA+ history that led to the establishment of Pride in our country.
+                    </p>
+                    <div class="info-box">
+                         <h3>Centro Documentazione Flavia Madaschi</h3>    
+                         <p>The Flavia Madaschi Center is the largest European community archive regarding queer history and civil rights.</p>
+                         <p>The center is named after Flavia Madaschi, the mother of a gay son and a member of A.GE.DO (Association of Parents, Relatives and Allies of LGBTQ People).</p>
+                         <p>Among its valuable resources, the archive holds approximately 21,000 books, 10,000 audiovisual materials, and 5,000 posters and graphic materials regarding LGBTQIA+ history and activism.</p>
+                    </div>
+                    <h3>Pain Points</h3>
+                    <p>The exhibition responds to four main problems, that were identified through on-site visits, benchmark research, discussion with Cassero's staff:</p>
+                    <ul><li>Cassero regulars aren't aware of the archive's existence, missing crucial information on Italian Pride.</li>
+                    <li>The archive does not have a dedicated space for exhibitions. It does have a court outside, and a hall dedicated to events.</li>
+                    <li>A large portion of the material preserved by Cassero is multimedial, making them difficult to display in a traditional sense.</li>
+                    <li>The archive is so large that it may be hard to browse through the digital content without guidance.</li></ul>
+                    <hr>
+                    <p class="center-text">See our preliminary notes <a href="documents/preliminary_notes.pdf" target="_blank">here</a></p>
+                </section>
+
+
+                <section id="sez2" class="box">
+                    <h2>Benchmark</h2>
+                    <div class="benchmark-card">
+                        <img src="images/benchmark1.png" alt="Benchmark 1">
+                    <div class="benchmark-text">
+                        <h3><a href="https://www.graphicdesignand.com/shows/hope-to-nope" target="_blank">Hope to Nope: Graphics and Politics 2008–18</a></h3>
+                        <p><b>The reference:</b> An exhibition exploring how graphic design has shaped and reflected global political movements during one of the most turbulent decades of the 21st century.</p>
+                        <p><b>The gap:</b>  Lack of multimedia elements. The exhibition was not rendered digitally so it is no longer accessible.</p>
+                    </div>
+                    </div>
+                    <div class="benchmark-card">
+                        <img src="images/benchmark2.png" alt="Benchmark 2">
+                    <div class="benchmark-text">
+                        <h3><a href="https://www.brooklynmuseum.org/exhibitions/copy_machine_manifestos_artists_who_make_zines" target="_blank">Copy Machine Manifestos: Artists Who Make Zines</a></h3>
+                        <p><b>The reference:</b> The first exhibition dedicated to zines, displaying marginalized people's influence in history through an art medium, in this case DIY publications.</p>
+                        <p><b>The gap:</b> Little insight into the evolution of digital DIY publishing such as webzines, blogs, and other digital platforms</p>
+                    </div>
+                    </div>
+                    <div class="benchmark-card">
+                        <img src="images/benchmark3.png" alt="Benchmark 3">
+                    <div class="benchmark-text">
+                        <h3><a href="https://lgbtqvrmuseum.com/" target="_blank">LGBTQ+ VR Museum</a></h3>
+                        <p><b>The reference:</b> An immersive virtual reality museum that showcases LGBTQIA+ stories, artworks, and personal artefacts from around the world.</p>
+                        <p><b>The gap:</b> It focuses heavily on personal, individual narratives rather than exploring the broader context.</p>
+                    </div>
+                    </div>
+                    <div class="benchmark-card">
+                        <img src="images/benchmark4.png" alt="Benchmark 4">
+                    <div class="benchmark-text">
+                        <h3><a href="https://cassero.it/centro-documentazione/" target="_blank">Centro Documentazione Flavia Madaschi</a></h3>
+                        <p><b>The reference:</b> A community archive and documentation center that provides access to the historical and cultural heritage of the Italian LGBTQIA+ movement through books, posters, audiovisual materials.</p>
+                        <p><b>The gap:</b> The center prioritizes documentation and preservation, making its rich collection less accessible and engaging.</p>
+                    </div>
+                    </div>
+                    <hr>
+                    <br>
+                    <br>
+                    <h3>Project Innovations</h3>    
+                    <p>By observing benchmark projects, it has been observed that while some have successfully combined physical displays with digital elements, many of their online resources are no longer available, limiting their long-term impact and accessibility.</p>
+                    <p>Thus, <em>Fighting for Pride</em> proposes a hybrid approach by combining a physical exhibition with a permanent digital archive, making Italian LGBTQIA+ history more accessible, engaging, and sustainable. This is done by integrating the exhibition with a searchable digital archive that remains available beyond the exhibition's duration. Rather than presenting archival material as static records, the project transforms them into an interactive experience.</p>
+                </section>
+
+
+                <section id="sez3" class="box">
+                    <h2>Design and Components</h2>
+                    <p>The design process unfolded in four  phases:</p>
+                    <ol>
+                        <li><b>Briefing</b>: Preliminary decisions about the exhibition's topic, its placement and components.</li>
+                        <li><b>Research</b>: On-site visit to the Center, discussions with the staff, gathering of informations through memoirs, photographic books, and other resources provided by the Center.</li>
+                        <li><b>Ideation</b>: Establishment of the exhibition, development of the WebApp on Figma and the 3D model on Blender. Creation of the captions relating to the selected materials.</li>
+                        <li><b>User journey</b>: Development of the user journey on Twine, flowchart and swimlane chart to show components interaction.</li>
+                    </ol>
+                    <hr>
+                    <h3 class="center-text">3D Model</h3>
+                    <p>A 3D model of the exhibition was built on Blender to show how the exhibition and its path would look in real life. The posters, photographs, and captions detail Italian Pride history in a path resembling a Pride march, eventually ending in the hall where the VR experience is placed.</p>
+                    <model-viewer
+                        class="viewer-3d"
+                        src="https://media.githubusercontent.com/media/nixasc/pride_exhibition/main/images/gallery.glb"
+                        camera-controls
+                        auto-rotate>
+                    </model-viewer>
+                    <p class="center-text">Access the .blend file <a href="https://github.com/nixasc/pride_exhibition/blob/main/gallery.blend" target="_blank">here</a></p>
+
+                    <h3 class="center-text">WebApp</h3>
+                    <div class="design-row">
+                        <img src="images/webapp.png" alt="WebApp mockup" class="webapp-img">
+
+                        <div class="design-text">
+                            <p>The WebApp accompanies the visitor and provides most of the digital material of the exhibition; by scanning the QR codes scattered on the panels, the visitor can open it and thus access the extra material stored there, such as browsable, digitized magazines, and speeches.</p>
+                            <p class="qr-caption">Access the WebApp <a href="https://fightingforpride.figma.site/" target="_blank">here</a> or by scanning the QR code.</p>
+                             <img src="images/qrcode.png" alt="QR code WebApp" class="qr-code">
+                        </div>
+                    </div>
+
+                    <h3 class="center-text">VR Experience</h3>
+                        <p>At the end of the exhibition, visitors reach a hall where they can engage in a <em>VR experience</em> involving a 360° video of Rome's 2016 Pride march.</p>
+                        <p>Watch the 360° video <a href="https://www.youtube.com/watch?v=_YSQOnbODAQ" target="_blank">here.</a></p>
+                    <hr>
+                    <p class="center-text">Read the full design brief <a href="documents/Design Brief.pdf" target="_blank">here</a></p>
+
+
+                </section>
+
+                <section id="sez4" class="box">
+                    <h2>User Flow and Experience</h2>
+                    <p>The visitor's journey through <em>Fighting for Pride</em> allows a single, uninterrupted physical path. The parallel physical and digital layers operate simultaneously. The visitor has the option to stay at the physical level (walking, reading panels), engage digitally (scanning QR codes to access extra content on the WebApp), or go even deeper (engaging with the VR experience at the end of the exhibition).</p>
+                    <p>The flowchart below shows the general user flow:</p>
+                    <img src="images/userflowchart.png" alt="User flowchart" class="large-img">
+                    <p>Along with the flowchart, a Twine narrative was developed in order to show the user journey during a hypothetical visit to the exhibition:</p>
+                    <img src="images/twine.png" alt="Twine" class="large-img">
+                    <p class="center-text">Play the Twine story here:</p>
+                    <iframe 
+                        src="documents/pridestory.html"
+                        width="80%"
+                        height="300"
+                        style="border: none;">
+                    </iframe>
+                </section>
+
+
+                <section id="team" class="box">
+                    <h2>The Team</h2>
+                    <div>
+                        <p class="center-text">Research at the Documentation Center.</p>
+                    </div>
+                    <img src="images/groupwork.jpeg">
+                    <div>
+                        <p class="center-text">Planning the exhibition.</p>
+                    </div>
+                    <img src="images/groupwork2.jpeg">
+                    <div>
+                        <p class="center-text">Final draft for the exhibition.</p>
+                    </div>
+                    <img src="images/exhibition.png">
+                    <div>
+                        <p class="center-text">The team while doing research at Pride 2026.</p>
+                    </div>
+                    <div class="team-container">
+                        <div class="team-member">
+                            <img src="images/member1.jpeg" alt="Team member 1">
+                            <a href="https://github.com/nixasc" target="_blank"><strong>Nicoletta Ascione</strong></a>
+                        </div>
+                        <div class="team-member">
+                             <img src="images/member2.jpeg" alt="Team member 2">
+                            <a href="https://github.com/silvialx" target="_blank"><strong>Silvia Lusenti</strong></a>
+                        </div>
+                        <div class="team-member">
+                             <img src="images/member3.jpeg" alt="Team member 3">
+                            <a href="https://github.com/alicesgarlata" target="_blank"><strong>Alice Sgarlata</strong></a>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <footer>Digital Heritage and Multimedia Project · Digital Humanities and Digital Knowledge 2025/2026</footer>
+            <script src="javascript.js"></script>
+        </body>
+    </html>
