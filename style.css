@@ -167,17 +167,22 @@ main{
     }
 }
 
-/* Prose stays at a comfortable reading width even though the
-   card itself now spans the full, wider main container. */
+/* Prose now spans the full width of the card (no more capped
+   reading width), and is justified for a cleaner, more
+   "printed page" look. hyphens:auto softens the uneven word
+   spacing that justified text can create in English. */
 .box > p,
 .box > ul,
 .box > ol{
-    max-width:800px;
+    text-align:justify;
+    hyphens:auto;
 }
 
 .box p{
     font-size: 1.25rem;
     line-height: 1.8;
+    text-align:justify;
+    hyphens:auto;
 }
 
 .box > img{
@@ -202,7 +207,6 @@ main{
     padding:40px;
     margin:80px 0 80px 0;   
     box-shadow:0 2px 8px rgba(0,0,0,.08);
-    max-width:800px;
 }
 
 .info-box h3{
@@ -216,6 +220,8 @@ main{
     margin:0;
     font-size:1.2rem;
     line-height:1.8;
+    text-align:justify;
+    hyphens:auto;
 }
 
 .box ul{
@@ -263,13 +269,14 @@ h2{
 
 .design-text{
     flex:1;
-    max-width:700px;
 }
 
 .design-text p{
     font-size:1.25rem;
     line-height:1.8;
     margin-top:0;
+    text-align:justify;
+    hyphens:auto;
 }
 
 .viewer-3d{
@@ -328,6 +335,8 @@ h2{
     margin:0 0 12px 0;
     font-size:1.15rem;
     line-height:1.75;
+    text-align:justify;
+    hyphens:auto;
 }
 
 .benchmark-text p:last-child{
