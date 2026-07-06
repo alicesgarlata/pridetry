@@ -128,20 +128,51 @@ h2:hover::after,
     width:100%;
 }
 
+/* ============================================================
+   MAIN LAYOUT
+   ------------------------------------------------------------
+   Widened from 900px to 1300px so the site actually uses
+   desktop screen space instead of sitting as a narrow column
+   in the middle of the page. Prose paragraphs are capped
+   separately below for readability, while cards/grids are
+   free to use the full width.
+   ============================================================ */
+
 main{
-    max-width:900px;
+    max-width:1300px;
     margin:auto;
     display:flex;
     flex-direction:column;
     gap:90px;
-    padding:0 20px 60px;
+    padding:0 50px 60px;
+}
+
+@media (max-width: 900px){
+    main{
+        padding:0 20px 60px;
+        gap:60px;
+    }
 }
 
 .box{
     background:#fffdf8;
     border-radius:20px;
-    padding:35px;
+    padding:45px 65px;
     box-shadow:0 2px 10px rgba(0,0,0,.08);
+}
+
+@media (max-width: 700px){
+    .box{
+        padding:30px 25px;
+    }
+}
+
+/* Prose stays at a comfortable reading width even though the
+   card itself now spans the full, wider main container. */
+.box > p,
+.box > ul,
+.box > ol{
+    max-width:800px;
 }
 
 .box p{
@@ -160,7 +191,7 @@ main{
 .box img.large-img{
     display:block;
     width:80%;
-    max-width:650px;
+    max-width:750px;
     margin:30px auto;
 }
 
@@ -171,6 +202,7 @@ main{
     padding:40px;
     margin:80px 0 80px 0;   
     box-shadow:0 2px 8px rgba(0,0,0,.08);
+    max-width:800px;
 }
 
 .info-box h3{
@@ -211,9 +243,16 @@ h2{
     margin:40px 0;
 }
 
+@media (max-width: 700px){
+    .design-row{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+}
+
 .webapp-img{
-    width:180px;
-    max-width:180px;
+    width:200px;
+    max-width:200px;
     height:auto;
     flex-shrink:0;
     display:block;
@@ -224,6 +263,7 @@ h2{
 
 .design-text{
     flex:1;
+    max-width:700px;
 }
 
 .design-text p{
@@ -233,8 +273,9 @@ h2{
 }
 
 .viewer-3d{
-    width:65%;
-    height:380px;
+    width:70%;
+    max-width:820px;
+    height:420px;
     margin:40px auto 90px auto;
     display:block;
     border-radius:40px;
@@ -243,29 +284,37 @@ h2{
     box-shadow:0 5px 15px rgba(0,0,0,.08);
 }
 
+/* ============================================================
+   BENCHMARK GRID
+   ------------------------------------------------------------
+   Previously four full-width horizontal cards stacked in a
+   single column. Now arranged as a responsive grid (2 columns
+   on wide screens, 1 on narrow ones), each card rebuilt as a
+   vertical card (image on top, text below) since that reads
+   better at grid-column width than a cramped horizontal row.
+   ============================================================ */
+
+.benchmark-grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+    gap:30px;
+}
+
 .benchmark-card{
     display:flex;
-    align-items:center;
-    gap:30px;
-
-    margin:35px 0;
+    flex-direction:column;
+    gap:15px;
     padding:25px;
-
     background:#f9f7f2;
     border-radius:18px;
     box-shadow:0 2px 8px rgba(0,0,0,.08);
 }
 
 .benchmark-card img{
-    width:180px;
-    height:180px;
+    width:100%;
+    height:220px;
     object-fit:cover;
     border-radius:15px;
-    flex-shrink:0;
-}
-
-.benchmark-text{
-    flex:1;
 }
 
 .benchmark-text h3{
@@ -276,14 +325,44 @@ h2{
 }
 
 .benchmark-text p{
-    margin:0;
-    font-size:1.2rem;
-    line-height:1.8;
+    margin:0 0 12px 0;
+    font-size:1.15rem;
+    line-height:1.75;
+}
+
+.benchmark-text p:last-child{
+    margin-bottom:0;
 }
 
 .qr-code{
     width:110px;
     margin:19px auto 8px;
+}
+
+/* ============================================================
+   PROCESS GALLERY (team section)
+   ============================================================ */
+
+.process-gallery{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap:30px;
+    margin:30px 0;
+}
+
+.process-gallery img{
+    width:100%;
+    aspect-ratio: 4 / 3;
+    object-fit:cover;
+    border-radius:15px;
+    box-shadow:0 4px 12px rgba(0,0,0,.1);
+}
+
+.process-gallery figcaption{
+    text-align:center;
+    font-size:0.95rem;
+    opacity:0.75;
+    margin-top:0.6rem;
 }
 
 .team-container{
