@@ -1,8 +1,32 @@
+/* ============================================================
+   DESIGN TOKENS
+   ------------------------------------------------------------
+   Palette pulled directly from the exhibition's own Twine
+   stylesheet (archive paper, terracotta accent, warm ink) so
+   the website and the interactive story read as one visual
+   system, not two disconnected artifacts.
+   ============================================================ */
+
+:root{
+    --paper: #f4f1ea;
+    --paper-rose: #f7eeec;
+    --paper-sage: #eef1ea;
+    --ink: #221d17;
+    --muted: #6b6152;
+    --accent: #b3262c;
+    --accent-soft: #e0b5ac;
+    --line: #d8cdbc;
+}
+
 body{
     margin:0;
+    font-family:"Source Serif 4", serif;
+    background:var(--paper);
+    color:var(--ink);
+}
+
+h1, h2, h3, h4, nav a, .process-num, .center-text.eyebrow{
     font-family:"Space Grotesk", sans-serif;
-    background:#eef7fb;
-    color:#444;
 }
 
 .hero{
@@ -11,11 +35,11 @@ body{
     background:
     linear-gradient(
         to bottom,
-        rgba(238,247,251,0) 45%,
-        rgba(238,247,251,0.2) 65%,
-        rgba(238,247,251,0.6) 80%,
-        rgba(238,247,251,0.9) 92%,
-        #eef7fb 100%
+        rgba(244,241,234,0) 45%,
+        rgba(244,241,234,0.2) 65%,
+        rgba(244,241,234,0.6) 80%,
+        rgba(244,241,234,0.9) 92%,
+        var(--paper) 100%
     ),
     url("images/pride.png") center/cover no-repeat;
 }
@@ -26,24 +50,26 @@ body{
     margin-bottom:25px;
     position:relative;
     z-index:2;
-    color:#3F5C63;
+    color:var(--ink);
 }
 
 .title-section h1{
-    font-size:clamp(4rem, 6vw, 4rem);
+    font-size:clamp(2.6rem, 6vw, 4.4rem);
     font-family:"Space Grotesk", sans-serif;
-    font-weight:normal;
+    font-weight:500;
     margin:0;
     display:inline-block;
     position:relative;
     transition:.3s;
-    color:#3F5C63;
+    color:var(--ink);
 }
 
 .title-section p{
-    font-size:1.5rem;
+    font-size:1.35rem;
+    font-family:"Space Grotesk", sans-serif;
+    font-weight:300;
     margin-top:12px;
-    color:#666;
+    color:var(--muted);
     transition:.3s;
 }
 
@@ -57,75 +83,41 @@ nav{
 
 nav a{
     text-decoration:none;
-    color:#444;
+    color:var(--ink);
     padding:10px 18px;
-    border:1px solid #999;
+    border:1px solid var(--line);
     border-radius:25px;
-    position:relative;
-    overflow:hidden;
-    transition:.35s;
-    z-index:1;
-}
-
-nav a::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:linear-gradient(
-        90deg,
-        #e40303,
-        #ff8c00,
-        #ffed00,
-        #008026,
-        #24408e,
-        #732982
-    );
-    transform:scaleX(0);
-    transform-origin:left;
-    transition:transform .35s ease;
-    z-index:-1;
+    font-size:.95rem;
+    letter-spacing:.02em;
+    transition:.25s;
 }
 
 nav a:hover{
-    color:white;
-    border-color:transparent;
-    transform:scale(1.06);
-}
-
-nav a:hover::before{
-    transform:scaleX(1);
+    color:var(--paper);
+    background:var(--accent);
+    border-color:var(--accent);
 }
 
 a{
     text-decoration:none;
-    color:#3a8b4c;
+    color:var(--accent);
     position:relative;
-    transition:.3s;
+    transition:.2s;
 }
 
-a:hover,
-h2:hover,
-.title-section h1:hover{
-    transform:scale(1.06);
+a:hover{
+    opacity:.7;
 }
 
-a::after,
-h2::after,
-.title-section h1::after{
-    content:"";
-    position:absolute;
-    left:0;
-    bottom:-4px;
-    width:0;
-    height:3px;
-    background:linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
-    transition:.3s;
-}
-
-a:hover::after,
-h2:hover::after,
-.title-section h1:hover::after{
-    width:100%;
+h2{
+    display:inline-block;
+    position:relative;
+    color:var(--ink);
+    font-size:2.2rem;
+    font-weight:500;
+    padding-bottom:.3em;
+    border-bottom:3px solid var(--accent);
+    margin-bottom:.6em;
 }
 
 /* ============================================================
@@ -156,9 +148,17 @@ main{
 
 .box{
     background:#fffdf8;
-    border-radius:20px;
+    border-radius:6px;
     padding:45px 65px;
-    box-shadow:0 2px 10px rgba(0,0,0,.08);
+    border:1px solid var(--line);
+}
+
+#sez2{
+    background:var(--paper-rose);
+}
+
+#sez3{
+    background:var(--paper-sage);
 }
 
 @media (max-width: 700px){
@@ -201,19 +201,18 @@ main{
 }
 
 .info-box{
-    background:#d5dfe3;;
-    border-left:8px solid #959a9c;
-    border-radius:15px;
+    background:var(--paper-sage);
+    border-left:4px solid var(--accent);
+    border-radius:2px;
     padding:40px;
-    margin:80px 0 80px 0;   
-    box-shadow:0 2px 8px rgba(0,0,0,.08);
+    margin:60px 0;
 }
 
 .info-box h3{
     margin-top:0;
     margin-bottom:15px;
     font-size:1.4rem;
-    color:#444;
+    color:var(--ink);
 }
 
 .info-box p{
@@ -234,12 +233,65 @@ main{
     margin-bottom:12px;
 }
 
-h2{
-    display:inline-block;
-    position:relative;
-    transition:.3s;
-    color:#3F5C63;
-    font-size:2.3rem;
+/* ============================================================
+   PROCESS TRACK
+   ------------------------------------------------------------
+   Numbered steps are justified here: this genuinely is a
+   sequence the team followed, not a decorative 01/02/03 applied
+   to unordered content.
+   ============================================================ */
+
+.process-track{
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap:0;
+    margin:40px 0;
+    border-top:1px solid var(--line);
+}
+
+.process-step{
+    padding:28px 24px 0 0;
+    border-right:1px solid var(--line);
+}
+
+.process-step:last-child{
+    border-right:none;
+}
+
+.process-num{
+    display:block;
+    font-size:.95rem;
+    color:var(--accent);
+    letter-spacing:.08em;
+    margin-bottom:10px;
+}
+
+.process-step h4{
+    font-family:"Space Grotesk", sans-serif;
+    font-size:1.15rem;
+    font-weight:500;
+    margin:0 0 10px 0;
+    color:var(--ink);
+}
+
+.process-step p{
+    font-size:1rem;
+    line-height:1.6;
+    color:var(--muted);
+    text-align:left;
+    hyphens:auto;
+}
+
+@media (max-width: 900px){
+    .process-track{
+        grid-template-columns:1fr;
+        border-top:none;
+    }
+    .process-step{
+        padding:20px 0;
+        border-right:none;
+        border-top:1px solid var(--line);
+    }
 }
 
 .design-row{
@@ -263,8 +315,8 @@ h2{
     flex-shrink:0;
     display:block;
     margin:0;
-    border-radius:15px;
-    box-shadow:0 4px 12px rgba(0,0,0,.1);
+    border-radius:4px;
+    border:1px solid var(--line);
 }
 
 .design-text{
@@ -285,10 +337,9 @@ h2{
     height:420px;
     margin:40px auto 90px auto;
     display:block;
-    border-radius:40px;
-    border:1px solid #ccc;
+    border-radius:6px;
+    border:1px solid var(--line);
     background:#ffffff;
-    box-shadow:0 5px 15px rgba(0,0,0,.08);
 }
 
 /* ============================================================
@@ -312,9 +363,9 @@ h2{
     flex-direction:column;
     gap:15px;
     padding:25px;
-    background:#f9f7f2;
-    border-radius:18px;
-    box-shadow:0 2px 8px rgba(0,0,0,.08);
+    background:var(--paper);
+    border-radius:4px;
+    border:1px solid var(--line);
 }
 
 .benchmark-card img{
@@ -327,7 +378,7 @@ h2{
 .benchmark-text h3{
     margin-top:0;
     margin-bottom:15px;
-    color:#3F5C63;
+    color:var(--ink);
     font-size:1.6rem;
 }
 
@@ -363,8 +414,8 @@ h2{
     width:100%;
     aspect-ratio: 4 / 3;
     object-fit:cover;
-    border-radius:15px;
-    box-shadow:0 4px 12px rgba(0,0,0,.1);
+    border-radius:4px;
+    border:1px solid var(--line);
 }
 
 .process-gallery figcaption{
@@ -393,9 +444,14 @@ h2{
     width:180px;
     height:180px;
     object-fit:cover;
-    border-radius:18px;
-    box-shadow:0 4px 12px rgba(0,0,0,.1);
+    border-radius:4px;
+    border:1px solid var(--line);
     transition:.3s;
+    filter:grayscale(.15);
+}
+
+.team-member img:hover{
+    filter:grayscale(0);
 }
 
 .team-member img:hover{
@@ -405,7 +461,7 @@ h2{
 .team-member a{
     margin-top:10px;
     text-decoration:none;
-    color:#3F5C63;
+    color:var(--ink);
     border:none;
     padding:0;
     font-size:1.2rem;
@@ -422,5 +478,39 @@ h2{
 footer{
     padding:30px;
     text-align:center;
-    background:#d6e0e4;
+    background:var(--paper-sage);
+    font-family:"Space Grotesk", sans-serif;
+    font-size:.9rem;
+    color:var(--muted);
+    margin-bottom:8px;
+}
+
+/* ============================================================
+   SIGNATURE BAR
+   ------------------------------------------------------------
+   The one deliberate use of the rainbow in the whole site,
+   deployed once, in the same exact stops used by the Twine's
+   fixed progress bar — so the website and the interactive
+   story read as two parts of a single visual system, rather
+   than the flag being sprinkled as a generic decoration.
+   ============================================================ */
+
+body::after{
+    content:"";
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:8px;
+    z-index:999;
+    pointer-events:none;
+    background:linear-gradient(
+        90deg,
+        #e4572e 0%, #e4572e 16.6%,
+        #f3a712 16.6%, #f3a712 33.2%,
+        #f6e042 33.2%, #f6e042 49.8%,
+        #2e933c 49.8%, #2e933c 66.4%,
+        #1b6ca8 66.4%, #1b6ca8 83%,
+        #6a4c93 83%, #6a4c93 100%
+    );
 }
