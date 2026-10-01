@@ -132,9 +132,7 @@ h2{
    ------------------------------------------------------------
    Widened from 900px to 1300px so the site actually uses
    desktop screen space instead of sitting as a narrow column
-   in the middle of the page. Prose paragraphs are capped
-   separately below for readability, while cards/grids are
-   free to use the full width.
+   in the middle of the page.
    ============================================================ */
 
 main{
@@ -155,9 +153,10 @@ main{
 
 .box{
     background:#fffdf8;
-    border-radius:6px;
+    border-radius:12px;
     padding:45px 65px;
     border:1px solid var(--line);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
 }
 
 #sez2{
@@ -174,10 +173,6 @@ main{
     }
 }
 
-/* Prose now spans the full width of the card (no more capped
-   reading width), and is justified for a cleaner, more
-   "printed page" look. hyphens:auto softens the uneven word
-   spacing that justified text can create in English. */
 .box > p,
 .box > ul,
 .box > ol{
@@ -242,10 +237,6 @@ main{
 
 /* ============================================================
    PROCESS TRACK
-   ------------------------------------------------------------
-   Numbered steps are justified here: this genuinely is a
-   sequence the team followed, not a decorative 01/02/03 applied
-   to unordered content.
    ============================================================ */
 
 .process-track{
@@ -351,12 +342,6 @@ main{
 
 /* ============================================================
    BENCHMARK GRID
-   ------------------------------------------------------------
-   Previously four full-width horizontal cards stacked in a
-   single column. Now arranged as a responsive grid (2 columns
-   on wide screens, 1 on narrow ones), each card rebuilt as a
-   vertical card (image on top, text below) since that reads
-   better at grid-column width than a cramped horizontal row.
    ============================================================ */
 
 .benchmark-grid{
@@ -371,7 +356,7 @@ main{
     gap:15px;
     padding:25px;
     background:var(--paper);
-    border-radius:4px;
+    border-radius:8px;
     border:1px solid var(--line);
 }
 
@@ -379,7 +364,7 @@ main{
     width:100%;
     height:220px;
     object-fit:cover;
-    border-radius:15px;
+    border-radius:8px;
 }
 
 .benchmark-text h3{
@@ -407,7 +392,7 @@ main{
 }
 
 /* ============================================================
-   PROCESS GALLERY (team section)
+   PROCESS GALLERY & TEAM SECTION
    ============================================================ */
 
 .process-gallery{
@@ -421,7 +406,7 @@ main{
     width:100%;
     aspect-ratio: 4 / 3;
     object-fit:cover;
-    border-radius:4px;
+    border-radius:6px;
     border:1px solid var(--line);
 }
 
@@ -451,17 +436,14 @@ main{
     width:180px;
     height:180px;
     object-fit:cover;
-    border-radius:4px;
+    border-radius:6px;
     border:1px solid var(--line);
-    transition:.3s;
+    transition: transform .3s ease, filter .3s ease;
     filter:grayscale(.15);
 }
 
 .team-member img:hover{
     filter:grayscale(0);
-}
-
-.team-member img:hover{
     transform:scale(1.05);
 }
 
@@ -505,12 +487,6 @@ footer{
 
 /* ============================================================
    SIGNATURE BAR
-   ------------------------------------------------------------
-   The one deliberate use of the rainbow in the whole site,
-   deployed once, in the same exact stops used by the Twine's
-   fixed progress bar — so the website and the interactive
-   story read as two parts of a single visual system, rather
-   than the flag being sprinkled as a generic decoration.
    ============================================================ */
 
 body::after{
@@ -523,7 +499,7 @@ body::after{
     z-index:999;
     pointer-events:none;
     background:linear-gradient(
-        90deg,
+        95deg,
         #e4572e 0%, #e4572e 16.6%,
         #f3a712 16.6%, #f3a712 33.2%,
         #f6e042 33.2%, #f6e042 49.8%,
@@ -531,13 +507,4 @@ body::after{
         #1b6ca8 66.4%, #1b6ca8 83%,
         #6a4c93 83%, #6a4c93 100%
     );
-}
-
-section {
-    background: #FFFFFF;
-    margin: 2rem auto;
-    padding: 3rem;
-    border-radius: 16px;
-    max-width: 900px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
 }
