@@ -573,3 +573,21 @@ body::after {
         padding: 6px 12px;
     }
 }
+/* Stile per il link attivo nella barra fissa */
+nav a.active {
+    background: var(--ink);
+    color: #ffffff !important;
+    border-color: var(--ink) !important;
+}
+
+/* Animazione fluida all'ingresso degli elementi */
+.fade-in {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
