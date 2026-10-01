@@ -19,14 +19,15 @@
 }
 
 body{
-    margin:0;
-    font-family:"Source Serif 4", serif;
-    background:var(--paper);
-    color:var(--ink);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: #2D2D2D;
+    background-color: #FAFAFA;
+    margin: 0;
 }
 
 h1, h2, h3, h4, nav a, .process-num, .center-text.eyebrow{
-    font-family:"Space Grotesk", sans-serif;
+    font-family:'Playfair Display', serif;
 }
 
 .hero{
@@ -530,4 +531,13 @@ body::after{
         #1b6ca8 66.4%, #1b6ca8 83%,
         #6a4c93 83%, #6a4c93 100%
     );
+}
+
+section {
+    background: #FFFFFF;
+    margin: 2rem auto;
+    padding: 3rem;
+    border-radius: 16px;
+    max-width: 900px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
 }
